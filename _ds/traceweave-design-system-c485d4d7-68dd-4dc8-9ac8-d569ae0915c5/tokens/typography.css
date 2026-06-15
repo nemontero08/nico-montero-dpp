@@ -1,0 +1,67 @@
+/* ============================================================
+   TraceWeave · Typography
+   ------------------------------------------------------------
+   Reading is the priority. No exaggerated sizes. A single
+   coherent scale, desktop-first. IBM Plex Sans for prose & UI,
+   IBM Plex Mono for metadata, codes and data values.
+   ============================================================ */
+
+:root {
+  /* ---- Families ------------------------------------------- */
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  /* ---- Weights -------------------------------------------- */
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semibold:600;
+  --weight-bold:    700;
+  --weight-black:   800;  /* display / numeric emphasis */
+
+  /* ---- Type scale · size / line-height -------------------- */
+  /* Display — report covers, page titles (used sparingly)     */
+  --type-display-size: 2.25rem;   /* 36px */
+  --type-display-lh:   2.625rem;  /* 42px */
+
+  /* Heading — primary view titles                             */
+  --type-h1-size: 1.75rem;        /* 28px */
+  --type-h1-lh:   2.125rem;       /* 34px */
+
+  /* Section — block titles                                    */
+  --type-h2-size: 1.375rem;       /* 22px */
+  --type-h2-lh:   1.75rem;        /* 28px */
+
+  /* Subsection                                                */
+  --type-h3-size: 1.125rem;       /* 18px */
+  --type-h3-lh:   1.5rem;         /* 24px */
+
+  /* Body — default reading size                               */
+  --type-body-size: 1rem;         /* 16px */
+  --type-body-lh:   1.55rem;      /* ~25px */
+
+  /* Body small — dense UI, secondary prose                    */
+  --type-body-sm-size: 0.875rem;  /* 14px */
+  --type-body-sm-lh:   1.3125rem; /* 21px */
+
+  /* Caption — helper text, captions                           */
+  --type-caption-size: 0.8125rem; /* 13px */
+  --type-caption-lh:   1.125rem;  /* 18px */
+
+  /* Table — tabular data rows                                 */
+  --type-table-size: 0.875rem;    /* 14px */
+  --type-table-lh:   1.25rem;     /* 20px */
+
+  /* Metadata — codes, IDs, values (mono)                      */
+  --type-meta-size: 0.8125rem;    /* 13px */
+  --type-meta-lh:   1.125rem;     /* 18px */
+
+  /* Label / eyebrow — section labels (mono, uppercase)        */
+  --type-label-size: 0.6875rem;   /* 11px */
+  --type-label-lh:   1rem;        /* 16px */
+
+  /* ---- Letter-spacing ------------------------------------- */
+  --tracking-tight:  -0.011em;  /* large headings */
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;    /* labels, eyebrows */
+  --tracking-wider:  0.08em;    /* uppercase mono labels */
+}

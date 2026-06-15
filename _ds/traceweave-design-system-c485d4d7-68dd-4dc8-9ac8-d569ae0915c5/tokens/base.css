@@ -1,0 +1,63 @@
+/* ============================================================
+   TraceWeave · Base
+   ------------------------------------------------------------
+   Minimal, unopinionated element defaults so every surface
+   inherits the system's type, colour and rhythm. Components
+   style themselves; this just sets the stage.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--surface-page);
+  color: var(--text-body);
+  font-family: var(--font-sans);
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-lh);
+  font-weight: var(--weight-regular);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+}
+
+/* Headings inherit from the scale via utility classes / components;
+   reset native margins so vertical rhythm is explicit. */
+h1, h2, h3, h4, h5, h6, p, figure { margin: 0; }
+
+a {
+  color: var(--text-link);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+/* Mono data — IDs, codes, values */
+code, kbd, samp, .tw-mono {
+  font-family: var(--font-mono);
+  font-feature-settings: 'zero' 1;  /* slashed zero for codes */
+}
+
+/* Consistent, accessible focus across the system */
+:where(button, a, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+::selection {
+  background: var(--brand-100);
+  color: var(--brand-900);
+}
+
+/* ---- Type utility classes (optional, for specimens/prose) -- */
+.tw-display { font-size: var(--type-display-size); line-height: var(--type-display-lh); font-weight: var(--weight-semibold); letter-spacing: var(--tracking-tight); color: var(--text-strong); }
+.tw-h1      { font-size: var(--type-h1-size); line-height: var(--type-h1-lh); font-weight: var(--weight-semibold); letter-spacing: var(--tracking-tight); color: var(--text-strong); }
+.tw-h2      { font-size: var(--type-h2-size); line-height: var(--type-h2-lh); font-weight: var(--weight-semibold); color: var(--text-strong); }
+.tw-h3      { font-size: var(--type-h3-size); line-height: var(--type-h3-lh); font-weight: var(--weight-semibold); color: var(--text-strong); }
+.tw-body    { font-size: var(--type-body-size); line-height: var(--type-body-lh); }
+.tw-body-sm { font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-lh); }
+.tw-caption { font-size: var(--type-caption-size); line-height: var(--type-caption-lh); color: var(--text-muted); }
+.tw-meta    { font-family: var(--font-mono); font-size: var(--type-meta-size); line-height: var(--type-meta-lh); font-feature-settings: 'zero' 1; }
+.tw-label   { font-family: var(--font-mono); font-size: var(--type-label-size); line-height: var(--type-label-lh); font-weight: var(--weight-medium); letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--text-muted); }

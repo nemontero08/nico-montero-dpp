@@ -1,0 +1,130 @@
+/* ============================================================
+   TraceWeave · Color
+   ------------------------------------------------------------
+   Principle: colour carries MEANING, never decoration.
+   One brand colour (petrol). A warm-neutral spine so the
+   product reads sober but never cold. State colours are
+   deliberately low-saturation — informative, never punitive.
+   ============================================================ */
+
+:root {
+  /* ---- Brand · petrol -------------------------------------- */
+  --brand-50:  #EDF4F3;
+  --brand-100: #D6E7E6;
+  --brand-200: #ADCFCD;
+  --brand-300: #7FB0AE;
+  --brand-400: #4E8D8B;
+  --brand-500: #2E6F6D;
+  --brand-600: #1F5957;  /* primary action */
+  --brand-700: #184543;
+  --brand-800: #123433;
+  --brand-900: #0D2625;
+
+  /* ---- Neutral · warm-tinted slate ------------------------- */
+  --neutral-0:   #FFFFFF;
+  --neutral-50:  #F7F7F4;
+  --neutral-100: #EFEFEB;
+  --neutral-200: #E3E2DD;  /* hairline borders */
+  --neutral-300: #D2D1CA;
+  --neutral-400: #B0AFA6;
+  --neutral-500: #8A897F;
+  --neutral-600: #6B6A62;  /* metadata text */
+  --neutral-700: #4E4D46;
+  --neutral-800: #343330;
+  --neutral-900: #1C1B19;  /* strongest text */
+
+  /* ---- State · Verified (third-party confirmed) ------------ */
+  --verified-fg:     #2C6A4A;
+  --verified-bg:     #E9F1EB;
+  --verified-border: #C2D8C8;
+
+  /* ---- State · Declared (self-reported, neutral-slate) ----- */
+  --declared-fg:     #44566A;
+  --declared-bg:     #EBEFF3;
+  --declared-border: #CCD6DF;
+
+  /* ---- State · Pending (in validation, ochre) -------------- */
+  --pending-fg:     #876016;
+  --pending-bg:     #F5EEDC;
+  --pending-border: #E4D5B2;
+
+  /* ---- State · Critical (expired/error, clay — non-alarm) -- */
+  --critical-fg:     #9A4A3A;
+  --critical-bg:     #F3E7E3;
+  --critical-border: #E1C8C1;
+
+  /* ---- State · Muted (unavailable/archived/draft) ---------- */
+  --muted-fg:     #6B6A62;
+  --muted-bg:     #F0EFEC;
+  --muted-border: #D9D8D1;
+
+  /* ============================================================
+     Categorical accents — for tags, categories, project labels,
+     chart series & avatars. DECORATIVE/organisational only — they
+     carry NO trust meaning (that stays with the state colours
+     above). One harmonious family: equal lightness & chroma in
+     oklch, hue does the talking. Soft pastel fills, readable text.
+     ============================================================ */
+  --accent-teal-fg:     oklch(0.47 0.075 195);
+  --accent-teal-bg:     oklch(0.955 0.030 195);
+  --accent-teal-border: oklch(0.895 0.045 195);
+
+  --accent-blue-fg:     oklch(0.47 0.095 250);
+  --accent-blue-bg:     oklch(0.955 0.035 250);
+  --accent-blue-border: oklch(0.895 0.050 250);
+
+  --accent-violet-fg:     oklch(0.47 0.095 295);
+  --accent-violet-bg:     oklch(0.955 0.035 295);
+  --accent-violet-border: oklch(0.895 0.050 295);
+
+  --accent-rose-fg:     oklch(0.49 0.095 15);
+  --accent-rose-bg:     oklch(0.955 0.035 15);
+  --accent-rose-border: oklch(0.895 0.050 15);
+
+  --accent-amber-fg:     oklch(0.50 0.085 75);
+  --accent-amber-bg:     oklch(0.955 0.040 80);
+  --accent-amber-border: oklch(0.895 0.055 80);
+
+  --accent-green-fg:     oklch(0.48 0.080 150);
+  --accent-green-bg:     oklch(0.955 0.035 150);
+  --accent-green-border: oklch(0.895 0.050 150);
+
+  /* ============================================================
+     Semantic aliases — reference these in product, not raw scale
+     ============================================================ */
+
+  /* Surfaces */
+  --surface-page:    #FAFAF8;  /* app background (warm paper) */
+  --surface-card:    var(--neutral-0);
+  --surface-sunken:  var(--neutral-50);
+  --surface-raised:  var(--neutral-0);
+  --surface-inverse: var(--brand-800);
+
+  /* Text */
+  --text-strong:   var(--neutral-900);
+  --text-body:     var(--neutral-800);
+  --text-muted:    var(--neutral-600);
+  --text-subtle:   var(--neutral-500);
+  --text-on-brand: var(--neutral-0);
+  --text-link:     var(--brand-600);
+
+  /* Borders & lines */
+  --border-subtle:  var(--neutral-200);
+  --border-default: var(--neutral-300);
+  --border-strong:  var(--neutral-400);
+  --divider:        var(--neutral-200);
+
+  /* Interactive (brand) */
+  --action:         var(--brand-600);
+  --action-hover:   var(--brand-700);
+  --action-active:  var(--brand-800);
+  --action-subtle:  var(--brand-50);
+
+  /* Focus */
+  --focus-ring:   var(--brand-500);
+  --focus-halo:   color-mix(in oklch, var(--brand-500) 28%, transparent);
+
+  /* Selection */
+  --selected-bg:     var(--brand-50);
+  --selected-border: var(--brand-300);
+}

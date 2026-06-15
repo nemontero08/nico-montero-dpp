@@ -1,0 +1,35 @@
+/* ============================================================
+   TraceWeave · Motion
+   ------------------------------------------------------------
+   Fast, calm, functional. Motion confirms an action or reveals
+   structure — it never performs. No bounces, no overshoot.
+   Short durations, gentle standard easing.
+   ============================================================ */
+
+:root {
+  /* Durations — hover/focus, transitions, drawers & modals */
+  --motion-instant: 80ms;  /* @kind other */
+  --motion-fast:    140ms; /* @kind other */
+  --motion-base:    200ms; /* @kind other */
+  --motion-slow:    280ms; /* @kind other */
+
+  /* Easing */
+  --ease-standard: cubic-bezier(0.2, 0, 0.1, 1);   /* @kind other */ /* enter/exit default */
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);  /* @kind other */ /* reveal, expand */
+  --ease-in:       cubic-bezier(0.4, 0, 1, 1);     /* @kind other */ /* dismiss */
+
+  /* Composite tokens */
+  --transition-color:  color var(--motion-fast) var(--ease-standard),
+                       background-color var(--motion-fast) var(--ease-standard),
+                       border-color var(--motion-fast) var(--ease-standard);
+  --transition-transform: transform var(--motion-base) var(--ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-instant: 0ms; /* @kind other */
+    --motion-fast:    0ms; /* @kind other */
+    --motion-base:    0ms; /* @kind other */
+    --motion-slow:    0ms; /* @kind other */
+  }
+}

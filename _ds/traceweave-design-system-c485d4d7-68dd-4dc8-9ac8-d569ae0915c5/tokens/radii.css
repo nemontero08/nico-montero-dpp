@@ -1,0 +1,18 @@
+/* ============================================================
+   TraceWeave · Radii
+   ------------------------------------------------------------
+   Soft, confident corners — friendly without going bubbly.
+   Rounded enough to feel like modern product software, calm
+   enough to stay trustworthy. Pills/full-round reserved for
+   chips, status dots, avatars & switches.
+   ============================================================ */
+
+:root {
+  --radius-0:    0;
+  --radius-xs:   6px;   /* small tags, inline marks */
+  --radius-sm:   9px;   /* inputs, buttons, segmented controls */
+  --radius-md:   14px;  /* cards, panels, table containers */
+  --radius-lg:   18px;  /* modals, drawers, large surfaces */
+  --radius-xl:   24px;  /* feature/empty-state surfaces */
+  --radius-full: 999px; /* chips, dots, avatars, switches */
+}

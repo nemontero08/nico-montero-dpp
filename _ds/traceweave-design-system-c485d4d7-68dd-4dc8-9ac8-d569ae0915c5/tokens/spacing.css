@@ -1,0 +1,39 @@
+/* ============================================================
+   TraceWeave · Spacing
+   ------------------------------------------------------------
+   4px base unit. Generous whitespace and a consistent vertical
+   rhythm are first-class — the system breathes.
+   ============================================================ */
+
+:root {
+  --space-0:   0;
+  --space-1:   0.25rem;  /* 4  */
+  --space-2:   0.5rem;   /* 8  */
+  --space-3:   0.75rem;  /* 12 */
+  --space-4:   1rem;     /* 16 */
+  --space-5:   1.25rem;  /* 20 */
+  --space-6:   1.5rem;   /* 24 */
+  --space-7:   2rem;     /* 32 */
+  --space-8:   2.5rem;   /* 40 */
+  --space-9:   3rem;     /* 48 */
+  --space-10:  4rem;     /* 64 */
+  --space-11:  5rem;     /* 80 */
+  --space-12:  6rem;     /* 96 */
+
+  /* ---- Layout --------------------------------------------- */
+  --container-max:  1280px;   /* content max-width */
+  --container-text: 720px;    /* optimal reading measure */
+  --gutter:         var(--space-6);
+  --grid-columns:   12; /* @kind other */
+  --grid-gap:       var(--space-6);
+
+  /* Component density anchors */
+  --control-height-sm: 32px;
+  --control-height-md: 40px;
+  --control-height-lg: 48px;
+  --control-pad-x:     var(--space-4);
+
+  /* Sticky chrome heights */
+  --topbar-height: 56px;
+  --sidebar-width: 264px;
+}

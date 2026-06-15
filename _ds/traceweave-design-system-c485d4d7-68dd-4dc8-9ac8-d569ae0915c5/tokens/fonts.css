@@ -1,0 +1,15 @@
+/* ============================================================
+   TraceWeave · Webfonts
+   Plus Jakarta Sans → UI, headings, body (warm, geometric,
+                       friendly — more character than Plex/Inter,
+                       still highly legible at small sizes)
+   IBM Plex Mono     → metadata, codes, data values, labels
+                       (kept: the technical "data" voice and the
+                       trust DNA live here)
+   ------------------------------------------------------------
+   NOTE: Loaded from Google Fonts CDN. If you need fully
+   offline/self-hosted binaries, replace this @import with
+   local @font-face rules and ship the .woff2 files.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
