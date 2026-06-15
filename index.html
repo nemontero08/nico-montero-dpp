@@ -417,11 +417,18 @@
     </div>
   </x-import>
 
+  <!-- ============ VOLVER ARRIBA ============ -->
+  <sc-if value="{{ showTop }}" hint-placeholder-val="">
+    <button class="tw-clk" onClick="{{ scrollTop }}" aria-label="Volver arriba" title="Volver arriba" style="position:fixed;bottom:20px;right:20px;z-index:60;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:999px;background:var(--brand-600);color:var(--neutral-0);box-shadow:var(--shadow-lg);cursor:pointer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+    </button>
+  </sc-if>
+
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { section: 'veredicto', drawer: { open: false, kind: null, id: null }, modal: { open: false, id: null } };
+  state = { section: 'veredicto', drawer: { open: false, kind: null, id: null }, modal: { open: false, id: null }, showTop: false };
 
   trustEs = { verified: 'Verificado', declared: 'Declarado', pending: 'Pendiente' };
   trustColor = { verified: 'var(--verified-fg)', declared: 'var(--declared-fg)', pending: 'var(--pending-fg)' };
@@ -502,8 +509,12 @@ class Component extends DCLogic {
       entries.forEach((e) => { if (e.isIntersecting) this.setState({ section: e.target.id }); });
     }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
     ids.forEach((id) => { const el = document.getElementById(id); if (el) this._obs.observe(el); });
+    this._onScroll = () => { const v = window.scrollY > 420; if (v !== this.state.showTop) this.setState({ showTop: v }); };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
   }
-  componentWillUnmount() { if (this._obs) this._obs.disconnect(); }
+  componentWillUnmount() { if (this._obs) this._obs.disconnect(); if (this._onScroll) window.removeEventListener('scroll', this._onScroll); }
+
+  scrollTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   selSection = (id) => {
     const el = document.getElementById(id);
@@ -592,6 +603,8 @@ class Component extends DCLogic {
     const navDef = [ ['veredicto', 'Resumen'], ['composicion', 'Composición'], ['cadena', 'Cadena de suministro'], ['impacto', 'Impacto'], ['cumplimiento', 'Cumplimiento'] ];
     return {
       section,
+      showTop: this.state.showTop,
+      scrollTop: this.scrollTop,
       selSection: this.selSection,
       navItems: navDef.map(([id, label]) => ({ id, label, go: () => this.selSection(id), ariaCurrent: section === id ? 'true' : undefined })),
       attention: [
